@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { Store, PackagePlus, ShoppingBag, LineChart } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -45,6 +46,8 @@ const steps = [
 ];
 
 export function HowItWorks() {
+  const navigate = useNavigate();
+
   return (
     <section id="how-it-works" className="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +117,10 @@ export function HowItWorks() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3.5 rounded-xl shadow-lg hover:shadow-purple-200 hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <button 
+            onClick={() => navigate("/dashboard")}
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3.5 rounded-xl shadow-lg hover:shadow-purple-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
             Get Started for Free — No Credit Card
           </button>
           <p className="text-slate-400 text-xs mt-3">14-day free trial • Cancel anytime • Free onboarding support</p>
