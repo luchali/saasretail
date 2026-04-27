@@ -12,4 +12,6 @@ export const router = createBrowserRouter([
       { path: "dashboard", Component: DashboardPage },
     ],
   },
-]);
+], {
+  basename: "/saasretail",
+});
